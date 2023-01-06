@@ -1,10 +1,10 @@
 import './App.css';
-import Navbar from './Components/Navbar/Navbar'
+import Main from './Components/Main/Main';
 
 const App: React.FunctionComponent<{}> = () => {
     return (
         <div className="App" >
-            <Navbar></Navbar>
+            <Main></Main>
         </div >
     );
 }
