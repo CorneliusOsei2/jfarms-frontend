@@ -17,6 +17,19 @@ const LoginForm = (props: Props) => {
             const response = await props.axios_instance.post(props.login_url, e.target)
             localStorage.setItem("accessToken", response?.data.access_token)
             props.setAccessToken(response?.data.access_token)
+            console.log(response)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const googleLoginHandler = async (e: any): Promise<void> => {
+
+        try {
+            const response = await props.axios_instance.get("/clients/login/google", e.target)
+            // localStorage.setItem("accessToken", response?.data.access_token)
+            // props.setAccessToken(response?.data.access_token)
+            console.log(response)
         } catch (error) {
             console.log(error)
         }
@@ -25,6 +38,10 @@ const LoginForm = (props: Props) => {
 
     return (
         <>
+            <div>
+                <button onClick={googleLoginHandler}>Google Login</button>
+
+            </div>
 
             <div className="container">
 
