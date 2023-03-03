@@ -1,12 +1,11 @@
 import Input from "../Custom/Form/Input";
 import Select from "../Custom/Form/Select";
 import Button from "../Custom/Form/Button";
-import axios from "axios";
 
 
 const EmployeeRegistrationPage = (props) => {
 
-    const handleSubmit = async (e) => {
+    const registerEmployeeHander = async (e) => {
         e.preventDefault();
 
         const data = {
@@ -18,7 +17,6 @@ const EmployeeRegistrationPage = (props) => {
             "contact": e.target.phone_number.value
         }
 
-        console.log()
         const response = await props.axios_instance.post(props.url, data)
         console.log(response)
 
@@ -39,7 +37,7 @@ const EmployeeRegistrationPage = (props) => {
                 </div>
 
                 <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-lg">
-                    <form action="#" method="POST" onSubmit={handleSubmit}>
+                    <form action="#" method="POST" onSubmit={registerEmployeeHander}>
                         <div className="shadow sm:overflow-hidden sm:rounded-md">
 
                             <div className="space-y-6 bg-white py-6 px-4 sm:p-6">
